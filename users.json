@@ -1,0 +1,36 @@
+{
+   "count": 4,
+   "users": [
+      {
+         "id": "0123456789",
+         "email": "tuandd.310797@mail.com",
+         "password": "tuan123",
+         "admin": true,
+         "pokemon": []
+      },
+      {
+         "id": "7C48NYOBXB",
+         "name": "tuan123",
+         "email": "tuandd97.310797@mail.com",
+         "password": "$2b$10$iQb4RQICLTgwxlIjRO4bTejI5WwGfxeeXXHLu/W5ShT7u9oySj1BW",
+         "admin": false,
+         "pokemon": [806, 807]
+      },
+      {
+         "id": "1ZLIF2WK6B",
+         "name": "tuan_test2",
+         "email": "tuandd9779.310797@mail.com",
+         "password": "$2b$10$O4wCi4dmPlwHCD9jtxTEn.XlHBngwsfEM/OAyg1vE5tuBvLQXEj7u",
+         "admin": false,
+         "pokemon": []
+      },
+      {
+         "id": "UX0PEEGT7J",
+         "name": "tuan_test2",
+         "email": "tuandd977979.310797@mail.com",
+         "password": "$2b$10$crEtZLPtL/NeeY6EmIX.leBgVRGvRxuAWWMwcayC7GYWbef0vcw3q",
+         "admin": false,
+         "pokemon": []
+      }
+   ]
+}
