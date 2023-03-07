@@ -1,5 +1,5 @@
 {
-   "count": 807,
+   "count": 808,
    "totalPages": 41,
    "data": [
       {
@@ -37498,9 +37498,13 @@
             "dsdsd.com.jbpn.png/dsds",
             "dsdsd.com.jbpn.png/dsds",
             "dsdsd.com.jbpn.png/dsds",
+            "dsdsd.com.jbpn.png/dsds",
+            "dsdsd.com.jbpn.png/dsds",
             "dsdsd.com.jbpn.png/dsds"
          ],
          "abilities": [
+            "đá vô đầu m giờ",
+            "đá vô đầu m giờ",
             "đá vô đầu m giờ",
             "đá vô đầu m giờ",
             "đá vô đầu m giờ",
@@ -37522,6 +37526,16 @@
          "type1": "Flying",
          "type2": "psychic",
          "id": 807,
+         "isDelete": true
+      },
+      {
+         "name": "lalala",
+         "japanese_name": "hehe",
+         "imgPaths": ["dsdsd.com.jbpn.png/dsds"],
+         "abilities": ["đá vô đầu m giờ"],
+         "type1": "Flying",
+         "type2": "psychic",
+         "id": 808,
          "isDelete": false
       }
    ]

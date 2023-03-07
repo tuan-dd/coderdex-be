@@ -21,7 +21,7 @@ const getPokemons = async (req, res, next) => {
       type: query.type, // type && (type1, type2 null)
       name: query.name,
       japanese_name: query.japaneseName,
-      page: query.page,
+      page: query.page || 1,
    };
    try {
       if (filter.type && (filter.type1 || filter.type2)) {
@@ -188,7 +188,18 @@ const updatePokemon = async (req, res, next) => {
       }
 
       if (!data[pokemonId - 1]) {
-         users[indexUser].pokemon.filter((pokeId) => pokeId !== pokemonId);
+         users[indexUser].pokemon = users[indexUser].pokemon.filter(
+            (pokeId) => pokeId !== pokemonId,
+         );
+         dbUser.users = users;
+         fs.writeFile('users.json', JSON.stringify(dbUser), (data, err) => {
+            if (err) {
+               error('server maintenance . Sorry for the inconvenience ', 503);
+            }
+            error('not found pokemon,you can create new pokemon', 404);
+         });
+      }
+      if (data[pokemonId - 1].isDelete) {
          error('not found pokemon,you can create new pokemon', 404);
       }
       const keyOfPokemon = Object.keys(newUpdatePokemon);
@@ -240,8 +251,8 @@ const deletePokemon = async (req, res, next) => {
       if (indexUser < 0) {
          error('Not found user', 404);
       }
+
       if (!data[pokemonId - 1] || data[pokemonId - 1].isDelete) {
-         users[indexUser].pokemon.filter((pokeId) => pokeId !== pokemonId);
          error('not found pokemon or pokemon is delete', 404);
       }
       const isPokemonOfUser = users[indexUser].pokemon.some(
@@ -257,6 +268,7 @@ const deletePokemon = async (req, res, next) => {
          }
          oke();
       });
+
       function oke() {
          res.status(204).send('resource updated successfully');
       }

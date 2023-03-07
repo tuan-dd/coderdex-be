@@ -3,9 +3,10 @@ const validation = (schema) => async (req, res, next) => {
    let body = req.body;
    let query = req.query;
    try {
-      if (body) req.body = await schema.validate(body);
-      if (query) req.query = await schema.validate(query);
-      // console.log(query);
+      if (Object.keys(body).length) await schema.validate(body);
+      if (Object.keys(query).length) {
+         await schema.validate(query);
+      }
       next();
    } catch (error) {
       error.statusCode = 400;

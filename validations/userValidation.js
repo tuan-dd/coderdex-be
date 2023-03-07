@@ -1,16 +1,16 @@
 const yup = require('yup');
 
-const RegisterSchema = yup.object({
+const RegisterSchema = yup.object().shape({
    name: yup.string().required(),
    email: yup.string().email().required(),
    password: yup.string().min(6).max(12).required(),
 });
-const loginSchema = yup.object({
+const loginSchema = yup.object().shape({
    email: yup.string().email().required(),
    password: yup.string().required(),
 });
 
-const updateSchema = yup.object({
+const updateSchema = yup.object().shape({
    id: yup.string().max(0, 'Should not have an ID'),
    admin: yup.string().max(0, 'Should not have an admin'),
    email: yup.string().email().required(),

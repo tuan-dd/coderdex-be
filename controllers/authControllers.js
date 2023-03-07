@@ -7,7 +7,6 @@ const users = db.users;
 const login = async (req, res, next) => {
    const { email, password } = req.body;
    try {
-      // console.log(db);
       const user = users?.find((e) => e.email === email);
       if (!user) {
          const exception = new Error('user not exits');
@@ -23,7 +22,7 @@ const login = async (req, res, next) => {
       const accessToken = jwt.sign(
          { id: user.id, admin: user.admin },
          process.env.BACKEND_USER_SECRET_KEY,
-         { expiresIn: '24h' },
+         { expiresIn: '48h' },
       );
       const refreshToken = jwt.sign(
          { id: user.id },
