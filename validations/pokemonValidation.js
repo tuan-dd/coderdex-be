@@ -44,7 +44,7 @@ const getPokemonsSchema = yup.object().shape({
 });
 
 const createPokemonSchema = yup.object().shape({
-   id: yup.string().min(0, 'not have id'),
+   id: yup.string().max(0, 'not have id'),
    name: yup.string().required(),
    japanese_name: yup.string().notRequired(),
    abilities: yup.array().of(yup.string()).min(1).notRequired(),
@@ -66,7 +66,7 @@ const createPokemonSchema = yup.object().shape({
 });
 
 const updatePokemonSchema = yup.object().shape({
-   id: yup.string().min(0, 'not have id'),
+   id: yup.string().max(0, 'not have id'),
    name: yup.string().max(0, 'not cant change name'),
    abilities: yup.array().of(yup.string()).min(1).notRequired(),
    imgPaths: yup
